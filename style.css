@@ -1,0 +1,77 @@
+:root {
+    --dark-mode-main: #444444;
+    --dark-mode-box: #3A3A3A;
+    --box-dark: #3A3A3A;
+    --text-dark-mode: #EBEBEB;
+}
+
+.dark-mode {
+    background: var(--dark-mode-main);
+    color: var(--text-dark-mode);
+}
+.dark-mode-box {
+    background: var(--dark-mode-box) !important; 
+}
+
+h1 {
+    color: #3694FF;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    max-width: 700px;
+    background: #EBEBEB;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 30px;
+}
+
+.button-dark input[type=checkbox] {
+    display: none;
+}
+
+.button-dark label {
+    display: block;
+    position: relative;
+    background: grey;
+    width: 52px;
+    height: 27px;
+    border-radius: 100px;
+    text-indent: -9999px;
+    margin-top: 25px;
+}
+
+.button-dark label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 8ms all;
+}
+
+.button-dark input:checked + label {
+    background: #3694FF;
+}
+
+.button-dark input:checked + label::after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+}
+
+.button-dark label:active::after {
+    width: 45px;
+} 
